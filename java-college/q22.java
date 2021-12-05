@@ -1,32 +1,33 @@
 // 22. Create an abstract class called Figure which contains 3 data members (length,bread and height).Include an abstract method to find the area of the figure.Figure class also contains a concrete method to read the data members and to display them.Derive 2 classes Rectangle & triangle from Figure and override area() to find the area of a rectangle and area of a triangle.
 
-import java.util.Scanner;
+import java.io.*;
 
 abstract class Figure {
-    int length, bread, height;
+    int length, breadth, height;
 
     abstract void area();
 
     void read() {
-        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter the length");
-        length = sc.nextInt();
+        length = Integer.parseInt(br.readLine());
         System.out.println("Enter the breadth");
-        bread = sc.nextInt();
+        breadth = Integer.parseInt(br.readLine());
         System.out.println("Enter the height");
-        height = sc.nextInt();
+        height = Integer.parseInt(br.readLine());
+
     }
 
     void display() {
         System.out.println("Length is " + length);
-        System.out.println("Breadth is " + bread);
+        System.out.println("Breadth is " + breadth);
         System.out.println("Height is " + height);
     }
 }
 
 class Rectangle extends Figure {
     void area() {
-        System.out.println("Area of rectangle is " + length * bread);
+        System.out.println("Area of rectangle is " + length * breadth);
     }
 }
 
