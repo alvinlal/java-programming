@@ -24,3 +24,4 @@ public class nightsky extends Applet {
 
     }
 }
+
